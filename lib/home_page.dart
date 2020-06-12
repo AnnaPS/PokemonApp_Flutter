@@ -1,7 +1,6 @@
 import 'package:awesome_loader/awesome_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:pokemonApp/poke_card.dart';
-import 'package:pokemonApp/pokeapi_manager.dart';
 
 import 'data/pokemon.dart';
 import 'package:http/http.dart' as http;
@@ -13,8 +12,6 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-
-// PokeApiManager pokeApiManager = PokeApiManager();
 
 class _HomePageState extends State<HomePage> {
   PokeHub pokeHub;
@@ -57,7 +54,9 @@ class _HomePageState extends State<HomePage> {
               ),
         drawer: Drawer(),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            fetchData();
+          },
           backgroundColor: Colors.red,
           child: Icon(Icons.refresh),
         ),
